@@ -1,0 +1,21 @@
+#!/bin/bash
+
+mkdir TopDir
+cd TopDir
+mkdir BottomDir
+cd BottomDir
+
+
+
+for i in {2..20}
+do 
+	touch File$i
+	echo "My name is File$i" >> File$i 
+	echo "Next file's name will be $(($i+1))" >> File$i
+
+done
+
+cd files
+cat File2
+
+
