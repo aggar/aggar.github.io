@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd desktop
 mkdir TopDir
 cd TopDir
 mkdir BottomDir
@@ -10,12 +11,22 @@ cd BottomDir
 for i in {2..20}
 do 
 	touch File$i
-	echo "My name is File$i" >> File$i 
-	echo "Next file's name will be $(($i+1))" >> File$i
-
+	echo "My name is File$i" > File$i
+	 if [ $i -eq 20 ]
+                then echo "No next file" >> File$i 
+         
+		else echo "Next file's name will be $(($i+1))" >> File$i
+	fi
+	echo "created File$i"
 done
 
 cd files
-cat File2
 
+for i in {2..20}
+do
+	echo "File$i"
+	cat File$i
+	echo "------------------------------"
+	
+done
 
