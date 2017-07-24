@@ -30,3 +30,12 @@ do
 	
 done
 
+f ='ls File*'
+for f in $files
+do 
+	x='grep '0\|2\|3' $f' 
+	if [ -n "$x" ]
+	then
+		mv $f > TopDir  
+	fi 
+
